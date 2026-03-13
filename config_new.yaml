@@ -1,0 +1,81 @@
+# ==========================================
+# OpenClaw 核心配置文件 (Optimized for WSL2)
+# ==========================================
+
+gateway:
+  mode: local
+  port:  18789
+  # 监听地址：127.0.0.1 仅限本地访问，若需局域网访问可改为 0.0.0.0
+  listen: "127.0.0.1:18789"
+  # 身份验证：建议设置一个复杂的 Token，TUI 连接时会用到
+  authToken: "your_secure_token_here"
+  # 日志配置
+  logLevel: "info"
+  logFile: "/tmp/openclaw/openclaw.log"
+
+# ------------------------------------------
+# 智能体模型配置 (你当前使用的是 MiniMax)
+# ------------------------------------------
+agent:
+  provider: "minimax"
+  model: "minimax-portal/MiniMax-M2.5"
+  # 请确保环境变量或此处填入正确的 API Key
+  apiKey: "5CNzMN5mqmhkkjEVJ0rGIQmDjd5vfRHXAsbMBAvA0uFsJ5FSc0gFd4cjzgoLfPf1jHSq7CsEMtwLHEOWSjUGwUATON3nLVdHNxGnkNoZ4GZmwVp6fcDRtKc"
+  # 提示词增强（可选）
+  systemPrompt: "You are a helpful assistant running in a WSL2 Ubuntu environment."
+
+# ------------------------------------------
+# 消息通道配置 (修复你的 Doctor Warnings)
+# ------------------------------------------
+channels:
+  telegram:
+    enabled: true
+    botToken: "你的_TELEGRAM_BOT_TOKEN"
+    
+    # --- 修复警告的关键区域 ---
+    # 策略建议：如果是个人私用，设为 allowlist 并填入你的 ID
+    # 如果想在任何群组直接使用，设为 "open"
+    groupPolicy: "open" 
+    
+    # 允许访问的用户 ID 列表（通过 @userinfobot 获取你的 ID）
+    allowFrom: 
+      - 8539445407  # 替换成你自己的 Telegram ID
+    
+    # 自动选择网络协议族，WSL2 建议保持 false 以避免 IPv6 优先导致的连接超时
+    autoSelectFamily: false
+    dnsResultOrder: "ipv4first"
+
+# ------------------------------------------
+# 内网穿透与工具配置
+# ------------------------------------------
+tailscale:
+  # 设为 true 后，OpenClaw 会尝试自动创建公开访问链接
+  enabled: true
+  # 之前报错的二进制路径，确保与 `which tailscale` 结果一致
+  binaryPath: "/usr/bin/tailscale"
+  # 自动通过 Tailscale 发布网关端口
+  serve: true
+
+browser:
+  enabled: true
+  listen: "127.0.0.1:18791"
+  # 允许 TUI 远程控制浏览器进行网页分析
+  headless: true
+
+# ------------------------------------------
+# 存储与画布配置
+# ------------------------------------------
+canvas:
+  # 存储代码片段、渲染结果的路径
+  root: "/home/du/.openclaw/canvas"
+  # 对应的访问前缀
+  hostPath: "/__openclaw__/canvas/"
+
+# ------------------------------------------
+# 自动任务与监控
+# ------------------------------------------
+healthMonitor:
+  enabled: true
+  interval: 300s
+  # 启动后宽限期，避免刚启动时的虚假报警
+  startupGrace: 60s
