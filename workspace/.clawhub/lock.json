@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "skills": {
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1773156482306
+    },
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1773156601697
+    },
+    "getnote": {
+      "version": "1.2.9",
+      "installedAt": 1773275583244
+    },
+    "ontology": {
+      "version": "1.0.4",
+      "installedAt": 1773324552481
+    },
+    "office": {
+      "version": "1.0.0",
+      "installedAt": 1773324785842
+    },
+    "mcporter": {
+      "version": "1.0.0",
+      "installedAt": 1773355681473
+    },
+    "data-profiler": {
+      "version": "2.1.0",
+      "installedAt": 1773355876681
+    },
+    "starlink": {
+      "version": "1.0.1",
+      "installedAt": 1773356047103
+    }
+  }
+}

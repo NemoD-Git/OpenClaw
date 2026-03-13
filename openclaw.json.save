@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.7",
+    "lastTouchedAt": "2026-03-10T13:42:54.911Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-10T13:42:52.876Z",
+    "lastRunVersion": "2026.3.7",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "minimax-portal/MiniMax-M2.5"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": "BSArNQ1apJzKPA-z3c4uZvVSY0Xk4LM"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
+      "groupPolicy": "open",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "2f6b3f3e7af2a59c7de98d4ecfbda45681691e78720cd47b"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "minimax-portal-auth": {
+        "enabled": true
+      }
+    }
+  }
+}

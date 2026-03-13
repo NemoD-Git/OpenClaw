@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "0cc6e93b-1bd2-45db-bbe3-4be38c678002",
+      "name": "AI新闻简报",
+      "enabled": true,
+      "createdAtMs": 1773222539341,
+      "updatedAtMs": 1773396158892,
+      "schedule": {
+        "kind": "cron",
+        "expr": "1 18 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "从国内外权威媒体（如Wired、TechCrunch、MIT Technology Review、36kr、机器之心等）搜集过去24小时的AI界重要新闻，以中文整理成简洁的要点式简报。每条新闻必须包含：1)标题 2)来源和原文链接 3)一句话摘要。确保链接是可访问的有效URL。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773482460000,
+        "lastRunAtMs": 1773396060005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 98887,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "408842c9-f393-439c-886a-4bd369d5c520",
+      "name": "互联网资讯简报",
+      "enabled": true,
+      "createdAtMs": 1773267603839,
+      "updatedAtMs": 1773356534637,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "从权威媒体搜集过去24小时的互联网/科技/通信领域最新消息，重点关注：1) Starlink星链进展 2) 中国卫星通信/星座项目发展 3) 机载卫通相控阵天线技术前沿 4) 6G/卫星互联网行业动态。以中文整理成要点式简报，每条必须包含：1)标题 2)来源和原文链接(确保是可访问的有效URL) 3)一句话摘要。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773442800000,
+        "lastRunAtMs": 1773356400005,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 134632,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "31cce66f-f5f0-40ce-a359-708223d4a823",
+      "name": "提醒预定羽毛球场地",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1773392898332,
+      "updatedAtMs": 1773392898332,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-14T12:00:00.000Z"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "提醒：今天下午2点预定羽毛球场地"
+      },
+      "state": {
+        "nextRunAtMs": 1773489600000
+      }
+    },
+    {
+      "id": "da3e6661-1e24-4557-8f6e-eea81926143b",
+      "name": "工作日志整理",
+      "enabled": true,
+      "createdAtMs": 1773395119451,
+      "updatedAtMs": 1773417340190,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "整理当天工作日志，生成报告包含：1)工作时间段 2)资源占用情况（CPU/内存） 3)存储占用变化 4)风险操作评估。将报告保存到memory/YYYY-MM-DD.md，并推送摘要到主会话。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773503700000,
+        "lastRunAtMs": 1773417300012,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 40178,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "20f9cabc-a18f-4147-8181-a10fe672c112",
+      "name": "系统状态报告",
+      "enabled": true,
+      "createdAtMs": 1773407150844,
+      "updatedAtMs": 1773414370593,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000,
+        "anchorMs": 1773407150844
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "检查OpenClaw系统状态并报告：1)Gateway运行状态 2)Telegram通道状态（是否正常收发消息） 3)活跃会话数量 4)最近是否有错误。以简洁格式输出，发现问题立即报告。"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773421550852,
+        "lastRunAtMs": 1773414350852,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 19741,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "runningAtMs": 1773417651613
+      }
+    },
+    {
+      "id": "aab6ca13-cdd1-4d73-aa9a-434c43609194",
+      "name": "GitHub备份",
+      "enabled": true,
+      "createdAtMs": 1773409636771,
+      "updatedAtMs": 1773417308933,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行Git备份：cd ~/.openclaw && git add openclaw.json config.yaml config_new.yaml workspace/SOUL.md workspace/USER.md workspace/AGENTS.md workspace/TOOLS.md workspace/memory/daily/*.md .gitignore && git commit -m 'Auto backup config' && git push origin master"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1773417600000,
+        "runningAtMs": 1773417600011
+      }
+    }
+  ]
+}

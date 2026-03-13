@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "profiles": {
+    "minimax:default": {
+      "type": "api_key",
+      "provider": "minimax",
+      "key": "sk-api-5CNzMN5mqmhkkjEVJ0rGIQmDjd5vfRHXAsbMBAvA0uFsJ5FSc0gFd4cjzgoLfPf1jHSq7CsEMtwLHEOWSjUGwUATON3nLVdHNxGnkNoZ4GZmwVp6fcDRtKc"
+    },
+    "minimax-cn:default": {
+      "type": "api_key",
+      "provider": "minimax-cn",
+      "key": "sk-api-5CNzMN5mqmhkkjEVJ0rGIQmDjd5vfRHXAsbMBAvA0uFsJ5FSc0gFd4cjzgoLfPf1jHSq7CsEMtwLHEOWSjUGwUATON3nLVdHNxGnkNoZ4GZmwVp6fcDRtKc"
+    },
+    "minimax-portal:default": {
+      "type": "oauth",
+      "provider": "minimax-portal",
+      "access": "sk-cp-5JLkCWXd0tiUW2zbkqwVE1Y6uW5PcQmWHd1OlcemAZwRDjlQJoXl-WUGbrCm1a2NCwaq09-MwYo5Bm_j6tlerCNE15gIM4EJ1zh5Zq3Km5w7q_qQABx5qcw",
+      "refresh": "PMg4sypeRjyQzwu2KnUErqm11pN-lLMWQW4nS3ETk1g=",
+      "expires": 1804431487529
+    }
+  },
+  "usageStats": {
+    "minimax:default": {
+      "errorCount": 1,
+      "lastUsed": 1772885717104,
+      "failureCounts": {
+        "auth": 1
+      },
+      "lastFailureAt": 1773067171205,
+      "cooldownUntil": 1773067231205
+    },
+    "minimax-portal:default": {
+      "errorCount": 0,
+      "lastUsed": 1773417595711
+    }
+  }
+}
