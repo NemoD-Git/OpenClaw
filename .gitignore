@@ -1,0 +1,5 @@
+secrets.env
+credentials/
+*.bak*
+logs/
+media/
