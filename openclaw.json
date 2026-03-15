@@ -1,30 +1,19 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-14T00:34:56.710Z"
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-15T01:58:25.179Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-10T13:42:52.876Z",
-    "lastRunVersion": "2026.3.7",
+    "lastRunAt": "2026-03-15T01:58:19.005Z",
+    "lastRunVersion": "2026.3.13",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "agents": {
     "defaults": {
-      "model": {
-        "primary": "minimax-portal/MiniMax-M2.5-highspeed"
-      },
+      "model": "minimax-portal/MiniMax-M2.5-highspeed",
       "compaction": {
         "mode": "safeguard"
-      }
-    }
-  },
-  "tools": {
-    "web": {
-      "search": {
-        "enabled": true,
-        "provider": "brave",
-        "apiKey": "BSAm_vjTY_p58ri7sZ-aLs5gexzi7_F"
       }
     }
   },
@@ -39,32 +28,18 @@
       "enabled": true,
       "dmPolicy": "pairing",
       "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
-      "groupAllowFrom": [
-        "8400833023"
-      ],
-      "groupPolicy": "allowlist",
+      "groupPolicy": "open",
       "streaming": "partial"
     }
   },
   "gateway": {
-    "port": 18789,
     "mode": "local",
-    "bind": "auto",
-    "controlUi": {
-      "allowedOrigins": [
-        "http://localhost:18789",
-        "http://127.0.0.1:18789",
-        "http://172.22.68.12:18789"
-      ]
-    },
     "auth": {
       "mode": "token",
-      "token": "2f6b3f3e7af2a59c7de98d4ecfbda45681691e78720cd47b"
+      "token": "5f4f0144ce7f06930625cc9a571cdc878392c79ed08a93d7"
     }
   },
-  "skills": {
-    "entries": {}
-  },
+  "skills": {},
   "plugins": {
     "entries": {
       "minimax-portal-auth": {

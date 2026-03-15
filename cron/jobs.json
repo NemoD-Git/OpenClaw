@@ -6,7 +6,7 @@
       "name": "AI新闻简报",
       "enabled": true,
       "createdAtMs": 1773222539341,
-      "updatedAtMs": 1773396158892,
+      "updatedAtMs": 1773482591720,
       "schedule": {
         "kind": "cron",
         "expr": "1 18 * * *",
@@ -20,14 +20,15 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last"
+        "channel": "last",
+        "chatId": "telegram:8400833023"
       },
       "state": {
-        "nextRunAtMs": 1773482460000,
-        "lastRunAtMs": 1773396060005,
+        "nextRunAtMs": 1773568860000,
+        "lastRunAtMs": 1773482460014,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 98887,
+        "lastDurationMs": 131706,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -38,7 +39,7 @@
       "name": "互联网资讯简报",
       "enabled": true,
       "createdAtMs": 1773267603839,
-      "updatedAtMs": 1773356534637,
+      "updatedAtMs": 1773533462321,
       "schedule": {
         "kind": "cron",
         "expr": "0 7 * * *",
@@ -52,38 +53,19 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last"
+        "channel": "last",
+        "chatId": "telegram:8400833023"
       },
       "state": {
-        "nextRunAtMs": 1773442800000,
-        "lastRunAtMs": 1773356400005,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 134632,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "31cce66f-f5f0-40ce-a359-708223d4a823",
-      "name": "提醒预定羽毛球场地",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1773392898332,
-      "updatedAtMs": 1773392898332,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-03-14T12:00:00.000Z"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "提醒：今天下午2点预定羽毛球场地"
-      },
-      "state": {
-        "nextRunAtMs": 1773489600000
+        "nextRunAtMs": 1773615600000,
+        "lastRunAtMs": 1773533462144,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 177,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "FailoverError: No API key found for provider \"anthropic\". Auth store: /home/du/.openclaw/agents/main/agent/auth-profiles.json (agentDir: /home/du/.openclaw/agents/main/agent). Configure auth for this agent (openclaw agents add <id>) or copy auth-profiles.json from the main agentDir.",
+        "lastErrorReason": "auth"
       }
     },
     {
@@ -91,7 +73,7 @@
       "name": "工作日志整理",
       "enabled": true,
       "createdAtMs": 1773395119451,
-      "updatedAtMs": 1773417340190,
+      "updatedAtMs": 1773503766914,
       "schedule": {
         "kind": "cron",
         "expr": "55 23 * * *",
@@ -105,14 +87,15 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last"
+        "channel": "last",
+        "chatId": "telegram:8400833023"
       },
       "state": {
-        "nextRunAtMs": 1773503700000,
-        "lastRunAtMs": 1773417300012,
+        "nextRunAtMs": 1773590100000,
+        "lastRunAtMs": 1773503700013,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 40178,
+        "lastDurationMs": 66901,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0
@@ -123,7 +106,7 @@
       "name": "系统状态报告",
       "enabled": true,
       "createdAtMs": 1773407150844,
-      "updatedAtMs": 1773414370593,
+      "updatedAtMs": 1773537226975,
       "schedule": {
         "kind": "every",
         "everyMs": 7200000,
@@ -137,17 +120,18 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last"
+        "channel": "last",
+        "chatId": "telegram:8400833023"
       },
       "state": {
-        "nextRunAtMs": 1773421550852,
-        "lastRunAtMs": 1773414350852,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 19741,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1773417651613
+        "nextRunAtMs": 1773544385634,
+        "lastRunAtMs": 1773537185634,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 41341,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -155,7 +139,7 @@
       "name": "GitHub备份",
       "enabled": true,
       "createdAtMs": 1773409636771,
-      "updatedAtMs": 1773417308933,
+      "updatedAtMs": 1773504127279,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -169,11 +153,18 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last"
+        "channel": "last",
+        "chatId": "telegram:8400833023"
       },
       "state": {
-        "nextRunAtMs": 1773417600000,
-        "runningAtMs": 1773417600011
+        "nextRunAtMs": 1773590400000,
+        "lastRunAtMs": 1773504000013,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 127266,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
