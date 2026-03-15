@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-15T01:58:25.179Z"
+    "lastTouchedAt": "2026-03-15T02:58:09.075Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-15T01:58:19.005Z",
@@ -14,6 +14,15 @@
       "model": "minimax-portal/MiniMax-M2.5-highspeed",
       "compaction": {
         "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": "BSAm_vjTY_p58ri7sZ-aLs5gexzi7_F"
       }
     }
   },
