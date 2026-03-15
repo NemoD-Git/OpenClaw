@@ -1,13 +1,16 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-15T02:58:09.075Z"
+    "lastTouchedAt": "2026-03-15T15:08:44.214Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-15T01:58:19.005Z",
+    "lastRunAt": "2026-03-15T15:08:44.167Z",
     "lastRunVersion": "2026.3.13",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true
   },
   "agents": {
     "defaults": {
@@ -32,6 +35,9 @@
     "restart": true,
     "ownerDisplay": "raw"
   },
+  "web": {
+    "enabled": true
+  },
   "channels": {
     "telegram": {
       "enabled": true,
@@ -45,10 +51,19 @@
     "mode": "local",
     "auth": {
       "mode": "token",
-      "token": "5f4f0144ce7f06930625cc9a571cdc878392c79ed08a93d7"
+      "token": "b962bfcc33452d6276717e65c41c0708436f5bd3dc88e083"
     }
   },
-  "skills": {},
+  "skills": {
+    "entries": {
+      "getnote": {
+        "apiKey": "gk_live_728bb1026742e57a.4c570a88075e59872d9892cfe8c8b1b86487f880d5520e80",
+        "env": {
+          "GETNOTE_CLIENT_ID": "cli_3802f9db08b811f197679c63c078bacc"
+        }
+      }
+    }
+  },
   "plugins": {
     "entries": {
       "minimax-portal-auth": {
