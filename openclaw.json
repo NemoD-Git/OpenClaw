@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-15T15:08:44.214Z"
+    "lastTouchedAt": "2026-03-17T15:20:33.352Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-15T15:08:44.167Z",
@@ -40,11 +40,19 @@
   },
   "channels": {
     "telegram": {
-      "enabled": true,
+      "enabled": false,
       "dmPolicy": "pairing",
       "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
       "groupPolicy": "open",
       "streaming": "partial"
+    },
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a932a6b093785cd1",
+      "appSecret": "5cpsjBpFVJRnG0ylHO1ZueArZAB5VxnU",
+      "useWebSocket": true,
+      "groupPolicy": "open",
+      "allowFrom": "ou_ea8ca39d1d3a2f790642428796b7950a",
     }
   },
   "gateway": {
@@ -67,6 +75,9 @@
   "plugins": {
     "entries": {
       "minimax-portal-auth": {
+        "enabled": true
+      },
+      "feishu": {
         "enabled": true
       }
     }
