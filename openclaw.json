@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-17T15:20:33.352Z"
+    "lastTouchedAt": "2026-03-17T16:37:35.548Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-15T15:08:44.167Z",
@@ -40,10 +40,11 @@
   },
   "channels": {
     "telegram": {
-      "enabled": false,
+      "enabled": true,
       "dmPolicy": "pairing",
       "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
-      "groupPolicy": "open",
+      "groupPolicy": "allowlist",
+      "allowFrom": ["8539445407"],
       "streaming": "partial"
     },
     "feishu": {
@@ -51,21 +52,33 @@
       "appId": "cli_a932a6b093785cd1",
       "appSecret": "5cpsjBpFVJRnG0ylHO1ZueArZAB5VxnU",
       "useWebSocket": true,
-      "groupPolicy": "open",
-      "allowFrom": "ou_ea8ca39d1d3a2f790642428796b7950a",
+      "groupPolicy": "allowlist",
+      "allowFrom": ["cli_a932a6b093785cd1", "all"],
+      "streaming": true,
+      "blockStreaming": true,
+      "showThinking": true,
+      "renderStrategy": "card_v2",
+      "showThinking": "collapsed"
     }
   },
   "gateway": {
     "mode": "local",
+    "trustedProxies": ["127.0.0.1", "::1"],
     "auth": {
       "mode": "token",
       "token": "b962bfcc33452d6276717e65c41c0708436f5bd3dc88e083"
-    }
+    },
+    "controlUi": {
+      "allowedOrigins": [
+        "https://nemod-1.tail4f6f88.ts.net"
+      ]
+    },
+    "trustedProxies": ["127.0.0.1"]
   },
   "skills": {
     "entries": {
       "getnote": {
-        "apiKey": "gk_live_728bb1026742e57a.4c570a88075e59872d9892cfe8c8b1b86487f880d5520e80",
+        "apiKey": "gk_live_8967e75cdc10e077.e2f1a5e29b1b992ee46a8e287f30c03162d5e558b278bcd7",
         "env": {
           "GETNOTE_CLIENT_ID": "cli_3802f9db08b811f197679c63c078bacc"
         }

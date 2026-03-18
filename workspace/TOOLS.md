@@ -42,3 +42,15 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+## 搜索引擎配置
+
+### 主要搜索：Tavily
+- 脚本位置：~/.openclaw/search.sh
+- 使用方式：~/.openclaw/search.sh "关键词"
+- API Key: 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
+- 备用：Brave Search (web_search工具)
+
+### 搜索流程
+1. 优先使用 Tavily (search.sh)
+2. 如失败自动切换到 Brave (web_search)
