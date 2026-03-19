@@ -81,24 +81,7 @@
   },
   "agents": {
     "defaults": {
-      "model": {
-        "primary": "minimax-portal/MiniMax-M2.5",
-        "fallbacks": [
-          "minimax-portal/MiniMax-M2.5-highspeed",
-          "minimax-portal/MiniMax-M2.5-Lightning"
-        ]
-      },
-      "models": {
-        "minimax-portal/MiniMax-M2.5": {
-          "alias": "minimax-m2.5"
-        },
-        "minimax-portal/MiniMax-M2.5-highspeed": {
-          "alias": "minimax-m2.5-highspeed"
-        },
-        "minimax-portal/MiniMax-M2.5-Lightning": {
-          "alias": "minimax-m2.5-lightning"
-        }
-      },
+      "model": "minimax-portal/MiniMax-M2.5-highspeed",
       "compaction": {
         "mode": "safeguard"
       }
