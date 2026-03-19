@@ -67,7 +67,7 @@
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true,
-        "runningAtMs": 1773885726931
+        "runningAtMs": 1773907309325
       },
       "settings": {
         "knowledge_ids": {
@@ -104,7 +104,7 @@
         "lastDurationMs": 45157,
         "lastDeliveryStatus": "unknown",
         "consecutiveErrors": 2,
-        "runningAtMs": 1773885726931
+        "runningAtMs": 1773907309325
       }
     },
     {
@@ -112,7 +112,7 @@
       "name": "系统状态报告",
       "enabled": true,
       "createdAtMs": 1773407150844,
-      "updatedAtMs": 1773885724817,
+      "updatedAtMs": 1773907307176,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 * * *",
@@ -129,11 +129,11 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1773892801403,
-        "lastRunAtMs": 1773885601417,
+        "nextRunAtMs": 1773914401403,
+        "lastRunAtMs": 1773907201415,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 123400,
+        "lastDurationMs": 105761,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -167,7 +167,7 @@
         "lastDurationMs": 80075,
         "lastDeliveryStatus": "unknown",
         "consecutiveErrors": 1,
-        "runningAtMs": 1773885726931
+        "runningAtMs": 1773907309325
       }
     },
     {
@@ -216,7 +216,7 @@
       },
       "state": {
         "nextRunAtMs": 1773876600000,
-        "runningAtMs": 1773885726931
+        "runningAtMs": 1773907309325
       },
       "wakeMode": "now",
       "sessionTarget": "isolated",
