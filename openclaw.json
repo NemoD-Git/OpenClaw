@@ -44,7 +44,9 @@
       "dmPolicy": "pairing",
       "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
       "groupPolicy": "allowlist",
-      "allowFrom": ["8539445407"],
+      "allowFrom": [
+        "8539445407"
+      ],
       "streaming": "partial"
     },
     "feishu": {
@@ -53,17 +55,21 @@
       "appSecret": "5cpsjBpFVJRnG0ylHO1ZueArZAB5VxnU",
       "useWebSocket": true,
       "groupPolicy": "allowlist",
-      "allowFrom": ["cli_a932a6b093785cd1", "all"],
+      "allowFrom": [
+        "cli_a932a6b093785cd1",
+        "all"
+      ],
       "streaming": true,
       "blockStreaming": true,
-      "showThinking": true,
-      "renderStrategy": "card_v2",
-      "showThinking": "collapsed"
+      "showThinking": "collapsed",
+      "renderStrategy": "card_v2"
     }
   },
   "gateway": {
     "mode": "local",
-    "trustedProxies": ["127.0.0.1", "::1"],
+    "trustedProxies": [
+      "127.0.0.1"
+    ],
     "auth": {
       "mode": "token",
       "token": "b962bfcc33452d6276717e65c41c0708436f5bd3dc88e083"
@@ -72,8 +78,7 @@
       "allowedOrigins": [
         "https://nemod-1.tail4f6f88.ts.net"
       ]
-    },
-    "trustedProxies": ["127.0.0.1"]
+    }
   },
   "skills": {
     "entries": {
@@ -93,6 +98,13 @@
       "feishu": {
         "enabled": true
       }
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer",
+    "reset": {
+      "mode": "daily",
+      "atHour": 4
     }
   }
 }
