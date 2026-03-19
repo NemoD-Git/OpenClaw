@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-15T01:26:03.840Z"
+  },
+  "agents": {
+    "defaults": {
+      "model": "minimax-portal/MiniMax-M2.5-highspeed",
+      "workspace": "/home/du/.openclaw/workspace",
+      "memorySearch": {
+        "enabled": false
+      },
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": "BSAm_vjTY_p58ri7sZ-aLs5gexzi7_F"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
+      "groupPolicy": "open",
+      "streaming": "partial"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "5dbbda34f39e989846be53915f7220c9c7f176e89cb29981"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "minimax-portal-auth": {
+        "enabled": true
+      }
+    }
+  }
+}

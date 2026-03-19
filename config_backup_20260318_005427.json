@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-17T16:37:35.548Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-15T15:08:44.167Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true
+  },
+  "agents": {
+    "defaults": {
+      "model": "minimax-portal/MiniMax-M2.5-highspeed",
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": "BSAm_vjTY_p58ri7sZ-aLs5gexzi7_F"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "web": {
+    "enabled": true
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
+      "groupPolicy": "open",
+      "streaming": "partial"
+    },
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a932a6b093785cd1",
+      "appSecret": "5cpsjBpFVJRnG0ylHO1ZueArZAB5VxnU",
+      "useWebSocket": true,
+      "groupPolicy": "open",
+      "allowFrom": [
+        "all"
+      ],
+      "streaming": true,
+      "blockStreaming": true,
+      "showThinking": true
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "b962bfcc33452d6276717e65c41c0708436f5bd3dc88e083"
+    },
+    "controlUi": {
+      "allowedOrigins": [
+        "https://nemod-1.tail4f6f88.ts.net"
+      ]
+    },
+    "trustedProxies": ["127.0.0.1"]
+  },
+  "skills": {
+    "entries": {
+      "getnote": {
+        "apiKey": "gk_live_8967e75cdc10e077.e2f1a5e29b1b992ee46a8e287f30c03162d5e558b278bcd7",
+        "env": {
+          "GETNOTE_CLIENT_ID": "cli_3802f9db08b811f197679c63c078bacc"
+        }
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "minimax-portal-auth": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      }
+    }
+  }
+}

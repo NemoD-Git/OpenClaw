@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "0cc6e93b-1bd2-45db-bbe3-4be38c678002",
+      "name": "AI新闻简报",
+      "enabled": true,
+      "createdAtMs": 1773222539341,
+      "updatedAtMs": 1773828251101,
+      "schedule": {
+        "kind": "cron",
+        "expr": "1 18 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "生成互联网资讯简报和AI新闻简报。\n\n要求：\n1. 每条资讯必须包含【来源】和【原文链接】\n2. 每条资讯必须包含【权威评分】（满分20分），根据来源权威性打分：\n   - 20分：官方机构、政府部门、顶级学术机构\n   - 15-19分：主流权威媒体（如BBC、NYT、新华社、人民日报等）\n   - 10-14分：专业垂直媒体、行业知名媒体\n   - 5-9分：一般科技媒体、博客\n   - 1-4分：社交媒体、自媒体\n\n格式示例：\n**1. 资讯标题**\n   - 来源：XXX\n   - 原文链接：https://...\n   - 权威评分：XX/20分\n\n保存到Get笔记知识库 (pn5rGGOY)，标题格式：\"互联网资讯简报 YYYY-MM-DD\""
+      },
+      "delivery": [
+        {
+          "mode": "announce",
+          "channel": "telegram",
+          "chatId": "telegram:8400833023"
+        },
+        {
+          "mode": "announce",
+          "channel": "feishu",
+          "chatId": "ou_ea8ca39d1d3a2f790642428796b7950a"
+        }
+      ],
+      "state": {
+        "nextRunAtMs": 1773914460000,
+        "lastRunAtMs": 1773828109896,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 141205,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      },
+      "settings": {
+        "knowledge_ids": {
+          "internet": "pn5rGGOY",
+          "ai": "pn5rGGOY"
+        }
+      }
+    },
+    {
+      "id": "408842c9-f393-439c-886a-4bd369d5c520",
+      "name": "互联网资讯简报",
+      "enabled": true,
+      "createdAtMs": 1773267603839,
+      "updatedAtMs": 1773788517493,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "生成互联网资讯简报和AI新闻简报。\n\n要求：\n1. 每条资讯必须包含【来源】和【原文链接】\n2. 每条资讯必须包含【权威评分】（满分20分），根据来源权威性打分：\n   - 20分：官方机构、政府部门、顶级学术机构\n   - 15-19分：主流权威媒体（如BBC、NYT、新华社、人民日报等）\n   - 10-14分：专业垂直媒体、行业知名媒体\n   - 5-9分：一般科技媒体、博客\n   - 1-4分：社交媒体、自媒体\n\n格式示例：\n**1. 资讯标题**\n   - 来源：XXX\n   - 原文链接：https://...\n   - 权威评分：XX/20分\n\n保存到Get笔记知识库 (pn5rGGOY)，标题格式：\"互联网资讯简报 YYYY-MM-DD\""
+      },
+      "delivery": [
+        {
+          "mode": "announce",
+          "channel": "telegram",
+          "chatId": "telegram:8400833023"
+        },
+        {
+          "mode": "announce",
+          "channel": "feishu",
+          "chatId": "ou_ea8ca39d1d3a2f790642428796b7950a"
+        }
+      ],
+      "state": {
+        "nextRunAtMs": 1773874800000,
+        "lastRunAtMs": 1773788400011,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 117482,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      },
+      "settings": {
+        "knowledge_ids": {
+          "internet": "pn5rGGOY",
+          "ai": "pn5rGGOY"
+        }
+      }
+    },
+    {
+      "id": "da3e6661-1e24-4557-8f6e-eea81926143b",
+      "name": "工作日志整理",
+      "enabled": true,
+      "createdAtMs": 1773395119451,
+      "updatedAtMs": 1773762945188,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 23 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "整理当天工作日志，生成报告包含：1)工作时间段 2)资源占用情况（CPU/内存） 3)存储占用变化 4)风险操作评估。将报告保存到memory/YYYY-MM-DD.md，并推送摘要到主会话。"
+      },
+      "delivery": [
+        {
+          "mode": "announce",
+          "channel": "telegram",
+          "chatId": "telegram:8400833023"
+        },
+        {
+          "mode": "announce",
+          "channel": "feishu",
+          "chatId": "ou_ea8ca39d1d3a2f790642428796b7950a"
+        }
+      ],
+      "state": {
+        "nextRunAtMs": 1773849300000,
+        "lastRunAtMs": 1773762900031,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 45157,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 2,
+        "lastError": "Unsupported channel: telegram"
+      }
+    },
+    {
+      "id": "20f9cabc-a18f-4147-8181-a10fe672c112",
+      "name": "系统状态报告",
+      "enabled": true,
+      "createdAtMs": 1773407150844,
+      "updatedAtMs": 1773835342145,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */2 * * *",
+        "tz": "Asia/Shanghai",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "检查OpenClaw系统状态并报告：1)Gateway运行状态 2)Telegram通道状态（是否正常收发消息） 3)活跃会话数量 4)最近是否有错误。以简洁格式输出，发现问题立即报告。"
+      },
+      "delivery": [
+        {
+          "mode": "announce",
+          "channel": "telegram",
+          "chatId": "telegram:8400833023"
+        },
+        {
+          "mode": "announce",
+          "channel": "feishu",
+          "chatId": "ou_ea8ca39d1d3a2f790642428796b7950a"
+        }
+      ],
+      "state": {
+        "nextRunAtMs": 1773842401403,
+        "lastRunAtMs": 1773835201421,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 140724,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true,
+        "runningAtMs": 1773846019058
+      }
+    },
+    {
+      "id": "aab6ca13-cdd1-4d73-aa9a-434c43609194",
+      "name": "GitHub备份",
+      "enabled": true,
+      "createdAtMs": 1773409636771,
+      "updatedAtMs": 1773763334453,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "执行Git备份：cd ~/.openclaw && git add openclaw.json config.yaml config_new.yaml workspace/SOUL.md workspace/USER.md workspace/AGENTS.md workspace/TOOLS.md workspace/memory/daily/*.md .gitignore && git commit -m 'Auto backup config' && git push origin master"
+      },
+      "delivery": [
+        {
+          "mode": "announce",
+          "channel": "telegram",
+          "chatId": "telegram:8400833023"
+        },
+        {
+          "mode": "announce",
+          "channel": "feishu",
+          "chatId": "ou_ea8ca39d1d3a2f790642428796b7950a"
+        }
+      ],
+      "state": {
+        "nextRunAtMs": 1773849600000,
+        "lastRunAtMs": 1773763254378,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 80075,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "Unsupported channel: telegram"
+      }
+    },
+    {
+      "name": "Skills推荐",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "20 17 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "delivery": [
+        {
+          "mode": "announce",
+          "channel": "telegram",
+          "chatId": "telegram:8400833023"
+        },
+        {
+          "mode": "announce",
+          "channel": "feishu",
+          "chatId": "ou_ea8ca39d1d3a2f790642428796b7950a"
+        }
+      ],
+      "payload": {
+        "kind": "agentTurn",
+        "message": "从ClawHub搜索并推荐以下类别的优质Skills：\n1. 工程研究类 (engineering/research)\n2. 办公文案写作类 (office/document/writing)\n3. 通用效率类 (productivity)\n\n请：\n- 列出每个类别推荐的前3个Skills\n- 说明每个Skill的功能和安装方式\n- 评估是否值得安装\n\n使用命令: clawhub search <关键词> 搜索"
+      },
+      "state": {
+        "nextRunAtMs": 1773912000000,
+        "lastRunAtMs": 1773825600024,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 112567,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
+      },
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "updatedAtMs": 1773825712591
+    },
+    {
+      "name": "保存简报到Get笔记",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 7 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "delivery": [
+        {
+          "mode": "announce",
+          "channel": "telegram",
+          "chatId": "telegram:8400833023"
+        },
+        {
+          "mode": "announce",
+          "channel": "feishu",
+          "chatId": "ou_ea8ca39d1d3a2f790642428796b7950a"
+        }
+      ],
+      "payload": {
+        "kind": "agentTurn",
+        "message": "保存简报到Get笔记知识库。\n\n互联网/AI资讯简报保存到日报知识库 (pn5rGGOY)，标题格式：\"互联网资讯简报 YYYY-MM-DD\"\n研究报告保存到专业调研知识库 (oJO5PPWY)，标题格式：\"XXX调研报告 YYYY-MM-DD\"\n\n使用curl命令示例：\n```\ncurl -X POST \"https://openapi.biji.com/open/api/v1/resource/note/save\" \\\n  -H \"Authorization: gk_live_8967e75cdc10e077.e2f1a5e29b1b992ee46a8e287f30c03162d5e558b278bcd7\" \\\n  -H \"X-Client-ID: cli_3802f9db08b811f197679c63c078bacc\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"title\":\"互联网资讯简报 2026-03-15\",\"content\":\"简报内容\",\"note_type\":\"plain_text\",\"knowledge_ids\":[\"pn5rGGOY\"]}'\n```\n\n日报知识库: pn5rGGOY\n专业调研知识库: oJO5PPWY"
+      },
+      "state": {
+        "nextRunAtMs": 1773876600000
+      },
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "settings": {
+        "knowledge_ids": {
+          "internet": "pn5rGGOY",
+          "ai": "pn5rGGOY"
+        }
+      },
+      "id": "c4a62805-3af8-44e3-b641-885abdaddcb3"
+    }
+  ]
+}

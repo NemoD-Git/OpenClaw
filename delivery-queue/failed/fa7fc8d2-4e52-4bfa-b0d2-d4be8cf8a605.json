@@ -1,0 +1,19 @@
+{
+  "id": "fa7fc8d2-4e52-4bfa-b0d2-d4be8cf8a605",
+  "enqueuedAt": 1773505093199,
+  "channel": "telegram",
+  "to": "telegram:8400833023",
+  "accountId": "default",
+  "payloads": [
+    {
+      "text": "---\n\n**OpenClaw 系统状态报告**\n2026-03-15 00:17 (UTC+8)\n\n| 项目 | 状态 | 备注 |\n|------|------|------|\n| **Gateway** | ⚠️ 部分异常 | HTTP Dashboard 可访问(200)，RPC probe ok；但 systemd 服务状态显示 stopped（可能手动启动） |\n| **Telegram** | ❌ 异常 | 今天16:02-16:03期间大量\"Network request failed\"错误，消息发送失败 |\n| **活跃会话** | 1 | cron 任务会话 |\n| **最近错误** | 有 | Telegram 网络请求失败（可能网络不稳定或代理问题） |\n\n**问题**: Telegram 通道今天下午出现网络异常，消息发送失败。建议检查网络/代理设置。Gateway 本身在运行，但 systemd 服务状态异常，建议排查。",
+      "replyToTag": false,
+      "replyToCurrent": false,
+      "audioAsVoice": false
+    }
+  ],
+  "bestEffort": false,
+  "retryCount": 1,
+  "lastAttemptAt": 1773505098224,
+  "lastError": "Network request for 'sendMessage' failed!"
+}

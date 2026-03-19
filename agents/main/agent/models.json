@@ -55,7 +55,7 @@
           "maxTokens": 8192
         }
       ],
-      "apiKey": "sk-cp-5JLkCWXd0tiUW2zbkqwVE1Y6uW5PcQmWHd1OlcemAZwRDjlQJoXl-WUGbrCm1a2NCwaq09-MwYo5Bm_j6tlerCNE15gIM4EJ1zh5Zq3Km5w7q_qQABx5qcw"
+      "apiKey": "MINIMAX_API_KEY"
     },
     "minimax-cn": {
       "baseUrl": "https://api.minimaxi.com/anthropic",
