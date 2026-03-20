@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-19T13:16:26.245Z"
+    "lastTouchedAt": "2026-03-20T03:17:55.003Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-19T13:16:26.178Z",
@@ -84,7 +84,8 @@
       "model": "minimax-portal/MiniMax-M2.5-highspeed",
       "compaction": {
         "mode": "safeguard"
-      }
+      },
+      "maxConcurrent": 3
     }
   },
   "tools": {
