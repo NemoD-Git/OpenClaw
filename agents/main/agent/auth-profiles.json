@@ -16,7 +16,7 @@
       "provider": "minimax-portal",
       "access": "sk-cp-5JLkCWXd0tiUW2zbkqwVE1Y6uW5PcQmWHd1OlcemAZwRDjlQJoXl-WUGbrCm1a2NCwaq09-MwYo5Bm_j6tlerCNE15gIM4EJ1zh5Zq3Km5w7q_qQABx5qcw",
       "refresh": "PMg4sypeRjyQzwu2KnUErqm11pN-lLMWQW4nS3ETk1g=",
-      "expires": 1804431487529
+      "expires": 1805462114544
     }
   },
   "usageStats": {
@@ -31,7 +31,7 @@
     },
     "minimax-portal:default": {
       "errorCount": 0,
-      "lastUsed": 1773885918732
+      "lastUsed": 1774103978003
     }
   }
 }

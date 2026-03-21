@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-20T03:17:55.003Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-19T13:16:26.178Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true
+  },
+  "auth": {
+    "profiles": {
+      "minimax-portal:default": {
+        "provider": "minimax-portal",
+        "mode": "oauth"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "minimax-portal": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "apiKey": "minimax-oauth",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5-highspeed",
+            "name": "MiniMax M2.5 Highspeed",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "MiniMax-M2.5-Lightning",
+            "name": "MiniMax M2.5 Lightning",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": "minimax-portal/MiniMax-M2.5-highspeed",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 3
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "brave",
+        "apiKey": "BSAm_vjTY_p58ri7sZ-aLs5gexzi7_F"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer",
+    "reset": {
+      "mode": "daily",
+      "atHour": 4
+    }
+  },
+  "web": {
+    "enabled": true
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
+      "allowFrom": [
+        "8539445407"
+      ],
+      "groupPolicy": "allowlist",
+      "streaming": "partial",
+      "polling": {
+        "limit": 1,
+        "timeout": 50,
+        "retryAfter": 5000 
+      }
+    },
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a932a6b093785cd1",
+      "appSecret": "5cpsjBpFVJRnG0ylHO1ZueArZAB5VxnU",
+      "useWebSocket": true,
+      "groupPolicy": "allowlist",
+      "allowFrom": [
+        "cli_a932a6b093785cd1",
+        "all"
+      ],
+      "streaming": true,
+      "blockStreaming": true,
+      "showThinking": "collapsed",
+      "renderStrategy": "card_v2"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "controlUi": {
+      "allowedOrigins": [
+        "https://nemod-1.tail4f6f88.ts.net"
+      ]
+    },
+    "auth": {
+      "mode": "token",
+      "token": "b962bfcc33452d6276717e65c41c0708436f5bd3dc88e083"
+    },
+    "trustedProxies": [
+      "127.0.0.1"
+    ]
+  },
+  "skills": {
+    "entries": {
+      "getnote": {
+        "apiKey": "gk_live_8967e75cdc10e077.e2f1a5e29b1b992ee46a8e287f30c03162d5e558b278bcd7",
+        "env": {
+          "GETNOTE_CLIENT_ID": "cli_3802f9db08b811f197679c63c078bacc"
+        }
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "minimax-portal-auth": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      }
+    }
+  }
+}
