@@ -1,12 +1,12 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-20T03:17:55.003Z"
+    "lastTouchedAt": "2026-03-21T15:57:38.838Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-19T13:16:26.178Z",
+    "lastRunAt": "2026-03-21T15:57:38.767Z",
     "lastRunVersion": "2026.3.13",
-    "lastRunCommand": "configure",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "browser": {
@@ -110,6 +110,9 @@
       "atHour": 4
     }
   },
+  "cron": {
+    "enabled": true
+  },
   "web": {
     "enabled": true
   },
@@ -119,7 +122,7 @@
       "dmPolicy": "pairing",
       "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
       "allowFrom": [
-        "8539445407"
+        8539445407
       ],
       "groupPolicy": "allowlist",
       "streaming": "partial"
