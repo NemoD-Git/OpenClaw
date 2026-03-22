@@ -1,10 +1,10 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-21T15:57:38.838Z"
+    "lastTouchedAt": "2026-03-21T16:23:38.202Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-21T15:57:38.767Z",
+    "lastRunAt": "2026-03-21T16:02:23.953Z",
     "lastRunVersion": "2026.3.13",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
@@ -166,7 +166,7 @@
           "GETNOTE_CLIENT_ID": "cli_3802f9db08b811f197679c63c078bacc"
         }
       }
-    }
+    },
   },
   "plugins": {
     "entries": {
@@ -174,6 +174,9 @@
         "enabled": true
       },
       "feishu": {
+        "enabled": true
+      },
+      "lobster": {
         "enabled": true
       }
     }
