@@ -1,12 +1,12 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-21T16:23:38.202Z"
+    "lastTouchedVersion": "2026.3.23-2",
+    "lastTouchedAt": "2026-03-24T13:35:00.648Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-21T16:02:23.953Z",
-    "lastRunVersion": "2026.3.13",
-    "lastRunCommand": "doctor",
+    "lastRunAt": "2026-03-24T13:35:00.590Z",
+    "lastRunVersion": "2026.3.23-2",
+    "lastRunCommand": "configure",
     "lastRunMode": "local"
   },
   "browser": {
@@ -26,62 +26,20 @@
         "baseUrl": "https://api.minimaxi.com/anthropic",
         "apiKey": "minimax-oauth",
         "api": "anthropic-messages",
-        "models": [
-          {
-            "id": "MiniMax-M2.5",
-            "name": "MiniMax M2.5",
-            "reasoning": false,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "MiniMax-M2.5-highspeed",
-            "name": "MiniMax M2.5 Highspeed",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          },
-          {
-            "id": "MiniMax-M2.5-Lightning",
-            "name": "MiniMax M2.5 Lightning",
-            "reasoning": true,
-            "input": [
-              "text"
-            ],
-            "cost": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0
-            },
-            "contextWindow": 200000,
-            "maxTokens": 8192
-          }
-        ]
+        "models": []
       }
     }
   },
   "agents": {
     "defaults": {
-      "model": "minimax-portal/MiniMax-M2.5-highspeed",
+      "model": {
+        "primary": "minimax-portal/MiniMax-M2.7"
+      },
+      "models": {
+        "minimax-portal/MiniMax-M2.7-highspeed": {
+          "alias": "minimax-m2.7-highspeed"
+        }
+      },
       "compaction": {
         "mode": "safeguard"
       },
@@ -92,8 +50,26 @@
     "web": {
       "search": {
         "enabled": true,
-        "provider": "brave",
-        "apiKey": "BSAm_vjTY_p58ri7sZ-aLs5gexzi7_F"
+        "provider": "brave"
+      }
+    },
+    "media": {
+      "audio": {
+        "enabled": true,
+        "maxBytes": 20971520,
+        "echoTranscript": true,
+        "models": [
+          {
+            "type": "cli",
+            "command": "/home/du/bin/whisper",
+            "args": [
+              "--model",
+              "tiny",
+              "{{MediaPath}}"
+            ],
+            "timeoutSeconds": 120
+          }
+        ]
       }
     }
   },
@@ -177,6 +153,17 @@
         "enabled": true
       },
       "lobster": {
+        "enabled": true
+      },
+      "brave": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "BSAm_vjTY_p58ri7sZ-aLs5gexzi7_F"
+          }
+        }
+      },
+      "minimax": {
         "enabled": true
       }
     }
