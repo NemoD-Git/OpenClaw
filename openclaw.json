@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.23-2",
-    "lastTouchedAt": "2026-03-24T13:35:00.648Z"
+    "lastTouchedAt": "2026-03-25T13:08:44.506Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-24T13:35:00.590Z",
@@ -17,34 +17,90 @@
       "minimax-portal:default": {
         "provider": "minimax-portal",
         "mode": "oauth"
+      },
+      "minimax:cn": {
+        "provider": "minimax",
+        "mode": "api_key"
       }
     }
   },
   "models": {
+    "mode": "merge",
     "providers": {
       "minimax-portal": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
         "apiKey": "minimax-oauth",
         "api": "anthropic-messages",
-        "models": []
+        "models": [
+          {
+            "id": "abab7-chat",
+            "name": "MiniMax-2.7-Chat"
+          },
+          {
+            "id": "abab7-preview",
+            "name": "MiniMax-2.7-Preview"
+          }
+        ]
+      },
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "api": "anthropic-messages",
+        "authHeader": true,
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.06,
+              "cacheWrite": 0.375
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          }
+        ]
       }
     }
   },
   "agents": {
     "defaults": {
       "model": {
-        "primary": "minimax-portal/MiniMax-M2.7"
+        "primary": "minimax-portal/abab7-chat"
       },
       "models": {
-        "minimax-portal/MiniMax-M2.7-highspeed": {
-          "alias": "minimax-m2.7-highspeed"
+        "minimax-portal/abab7-chat": {
+          "alias": "minimax-m2.7"
+        },
+        "minimax/MiniMax-M2.7": {
+          "alias": "Minimax"
         }
+      },
+      "memorySearch": {
+        "enabled": false
       },
       "compaction": {
         "mode": "safeguard"
       },
       "maxConcurrent": 3
-    }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "researcher",
+        "name": "Researcher",
+        "default": false,
+        "workspace": "/home/du/.openclaw/workspace-researcher",
+        "agentDir": "/home/du/.openclaw/agents/researcher/agent",
+        "model": "minimax-portal/abab7-chat"
+      }
+    ]
   },
   "tools": {
     "web": {
@@ -57,7 +113,6 @@
       "audio": {
         "enabled": true,
         "maxBytes": 20971520,
-        "echoTranscript": true,
         "models": [
           {
             "type": "cli",
@@ -69,7 +124,8 @@
             ],
             "timeoutSeconds": 120
           }
-        ]
+        ],
+        "echoTranscript": true
       }
     }
   },
@@ -114,9 +170,12 @@
         "all"
       ],
       "streaming": true,
-      "blockStreaming": true,
-      "showThinking": "collapsed",
-      "renderStrategy": "card_v2"
+      "blockStreaming": false,
+      "updateInterval": 600,
+      "incrementalReasoning": true,
+      "showThinking": "visible",
+      "renderStrategy": "card_v2",
+      "thinkingTitle": "\ud83d\udd0d AI \u601d\u8003\u4e2d..."
     }
   },
   "gateway": {
