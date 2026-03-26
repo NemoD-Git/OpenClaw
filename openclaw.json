@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.23-2",
-    "lastTouchedAt": "2026-03-25T13:08:44.506Z"
+    "lastTouchedVersion": "2026.3.24",
+    "lastTouchedAt": "2026-03-26T15:09:08.135Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-24T13:35:00.590Z",
@@ -31,16 +31,7 @@
         "baseUrl": "https://api.minimaxi.com/anthropic",
         "apiKey": "minimax-oauth",
         "api": "anthropic-messages",
-        "models": [
-          {
-            "id": "abab7-chat",
-            "name": "MiniMax-2.7-Chat"
-          },
-          {
-            "id": "abab7-preview",
-            "name": "MiniMax-2.7-Preview"
-          }
-        ]
+        "models": []
       },
       "minimax": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
@@ -78,6 +69,12 @@
         },
         "minimax/MiniMax-M2.7": {
           "alias": "Minimax"
+        },
+        "minimax-portal/MiniMax-M2.7": {
+          "alias": "minimax-m2.7"
+        },
+        "minimax-portal/MiniMax-M2.7-highspeed": {
+          "alias": "minimax-m2.7-highspeed"
         }
       },
       "memorySearch": {
@@ -94,11 +91,28 @@
       },
       {
         "id": "researcher",
-        "name": "Researcher",
         "default": false,
         "workspace": "/home/du/.openclaw/workspace-researcher",
         "agentDir": "/home/du/.openclaw/agents/researcher/agent",
-        "model": "minimax-portal/abab7-chat"
+        "model": "minimax-portal/abab7-chat",
+        "identity": {
+          "name": "研究员 Nemo",
+          "theme": "Dig in and in, deep research into unknown ...",
+          "emoji": "🐵"
+        }
+      },
+      {
+        "id": "supervisor",
+        "default": false,
+        "name": "supervisor",
+        "workspace": "/home/du/.openclaw/workspace-supervisor",
+        "agentDir": "/home/du/.openclaw/agents/supervisor/agent",
+        "model": "minimax-portal/MiniMax-M2.7",
+        "identity": {
+          "name": "监督员 Meg",
+          "theme": "Behave yourself, I am watching you...",
+          "emoji": "🐯"
+        }
       }
     ]
   },
@@ -148,16 +162,63 @@
   "web": {
     "enabled": true
   },
+  "bindings": [
+      {
+        "agentId": "researcher",
+        "match": {
+          "channel": "telegram",
+          "accountId": "researcher"
+        }
+      },
+      {
+        "agentId": "supervisor",
+        "match": {
+          "channel": "telegram",
+          "accountId": "nemo_supervisor"
+        }
+      }
+  ],
   "channels": {
     "telegram": {
       "enabled": true,
       "dmPolicy": "pairing",
-      "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
-      "allowFrom": [
-        8539445407
-      ],
       "groupPolicy": "allowlist",
-      "streaming": "partial"
+      "streaming": "partial",
+      "accounts": {
+        "default": {
+          "dmPolicy": "pairing",
+          "botToken": "8539445407:AAHqIqQyxlwyXDGuW8K-fyFXurFI2xdCCGg",
+          "allowFrom": [
+            8539445407
+          ],
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "researcher": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8725249338:AAFTTFjyaWTQR0IkzpuTBN9aFz1TYZB0omo",
+          "groups": {
+            "*": {
+              "requireMention": true
+            }
+          },
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "nemo_supervisor": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8767795282:AAEGNe6RCyuQkYXKHmEv74wCKHWH_MHxCF4",
+          "groups": {
+            "*": {
+              "requireMention": true
+            }
+          },
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        }
+      }
     },
     "feishu": {
       "enabled": true,
@@ -175,7 +236,7 @@
       "incrementalReasoning": true,
       "showThinking": "visible",
       "renderStrategy": "card_v2",
-      "thinkingTitle": "\ud83d\udd0d AI \u601d\u8003\u4e2d..."
+      "thinkingTitle": "🔍 AI 思考中..."
     }
   },
   "gateway": {
@@ -205,9 +266,6 @@
   },
   "plugins": {
     "entries": {
-      "minimax-portal-auth": {
-        "enabled": true
-      },
       "feishu": {
         "enabled": true
       },
