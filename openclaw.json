@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-03-26T15:09:08.135Z"
+    "lastTouchedAt": "2026-03-27T16:01:23.983Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-24T13:35:00.590Z",
@@ -143,6 +143,43 @@
       }
     }
   },
+  "bindings": [
+    {
+      "agentId": "researcher",
+      "match": {
+        "channel": "telegram",
+        "accountId": "researcher"
+      }
+    },
+    {
+      "agentId": "supervisor",
+      "match": {
+        "channel": "telegram",
+        "accountId": "nemo_supervisor"
+      }
+    },
+    {
+      "agentId": "researcher",
+      "match": {
+        "channel": "feishu",
+        "accountId": "RDer"
+      }
+    },
+    {
+      "agentId": "supervisor",
+      "match": {
+        "channel": "feishu",
+        "accountId": "Watcher"
+      }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "default"
+      }
+    }
+  ],
   "commands": {
     "native": "auto",
     "nativeSkills": "auto",
@@ -162,22 +199,6 @@
   "web": {
     "enabled": true
   },
-  "bindings": [
-      {
-        "agentId": "researcher",
-        "match": {
-          "channel": "telegram",
-          "accountId": "researcher"
-        }
-      },
-      {
-        "agentId": "supervisor",
-        "match": {
-          "channel": "telegram",
-          "accountId": "nemo_supervisor"
-        }
-      }
-  ],
   "channels": {
     "telegram": {
       "enabled": true,
@@ -230,13 +251,25 @@
         "cli_a932a6b093785cd1",
         "all"
       ],
+      "accounts": {
+        "RDer": {
+          "appID": "cli_a94cc749e0385bc3",
+          "appSecret": "znpC1TNjUABjkgDgCnwxcs12b3zA6jlu"
+        },
+        "Watcher": {
+          "appID": "cli_a94c3d686cfadbde",
+          "appSecret": "l1ROslhw3M5tYEYB7GuO8ejfkefkG3M6"
+        }
+      },
       "streaming": true,
       "blockStreaming": false,
       "updateInterval": 600,
       "incrementalReasoning": true,
       "showThinking": "visible",
       "renderStrategy": "card_v2",
-      "thinkingTitle": "🔍 AI 思考中..."
+      "thinkingTitle": "🔍 AI 思考中...",
+      "connectionMode": "websocket",
+      "domain": "feishu"
     }
   },
   "gateway": {
