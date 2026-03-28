@@ -243,21 +243,24 @@
     },
     "feishu": {
       "enabled": true,
-      "appId": "cli_a932a6b093785cd1",
-      "appSecret": "5cpsjBpFVJRnG0ylHO1ZueArZAB5VxnU",
       "useWebSocket": true,
+      "connectionMode": "websocket",
       "groupPolicy": "allowlist",
       "allowFrom": [
         "cli_a932a6b093785cd1",
         "all"
       ],
       "accounts": {
+        "default": {
+          "appId": "cli_a932a6b093785cd1",
+          "appSecret": "5cpsjBpFVJRnG0ylHO1ZueArZAB5VxnU"
+        },
         "RDer": {
-          "appID": "cli_a94cc749e0385bc3",
+          "appId": "cli_a94cc749e0385bc3",
           "appSecret": "znpC1TNjUABjkgDgCnwxcs12b3zA6jlu"
         },
         "Watcher": {
-          "appID": "cli_a94c3d686cfadbde",
+          "appId": "cli_a94c3d686cfadbde",
           "appSecret": "l1ROslhw3M5tYEYB7GuO8ejfkefkG3M6"
         }
       },
@@ -268,7 +271,6 @@
       "showThinking": "visible",
       "renderStrategy": "card_v2",
       "thinkingTitle": "🔍 AI 思考中...",
-      "connectionMode": "websocket",
       "domain": "feishu"
     }
   },
@@ -290,9 +292,10 @@
   "skills": {
     "entries": {
       "getnote": {
-        "apiKey": "gk_live_8967e75cdc10e077.e2f1a5e29b1b992ee46a8e287f30c03162d5e558b278bcd7",
+        "apiKey": "gk_live_cd553b1acdb22a7a.deeafc3eeb8a7fbb5553df1a46332df282b46ee0a210d40b",
         "env": {
-          "GETNOTE_CLIENT_ID": "cli_3802f9db08b811f197679c63c078bacc"
+          "GETNOTE_CLIENT_ID": "cli_a1b2c3d4e5f6789012345678abcdef90",
+          "GETNOTE_OWNER_ID": "ou_ab13163876b798740e25260c078b3098"
         }
       }
     }
