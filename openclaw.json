@@ -1,12 +1,12 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-03-27T16:01:23.983Z"
+    "lastTouchedAt": "2026-03-29T16:14:27.291Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-24T13:35:00.590Z",
-    "lastRunVersion": "2026.3.23-2",
-    "lastRunCommand": "configure",
+    "lastRunAt": "2026-03-29T16:14:27.224Z",
+    "lastRunVersion": "2026.3.24",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "browser": {
@@ -27,11 +27,89 @@
   "models": {
     "mode": "merge",
     "providers": {
+      "skillboss": {
+        "baseUrl": "https://api.skillboss.co/v1",
+        "apiKey": "sk-gAAAAABpyOPxQiDqjmr2-JDtzuBapCopkpGC_NHHtOiHNO64oQr9bKi2aG3K7R1AYk1ekCtC-Z8Hz9hl4WN-QK-IS-Piu__Y2uNAl7bMn6N3KggjPDTTks2oCFAxgg9SLYRpOi6MAB8My91Tf1-t6dR3or7udsCwzA==",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "skillboss/claude-4-5-sonnet",
+            "name": "Claude 4.5 Sonnet via SkillBoss",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 3,
+              "output": 15
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "skillboss/gpt-5",
+            "name": "GPT-5 via SkillBoss",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 15,
+              "output": 15
+            },
+            "contextWindow": 128000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "skillboss/gemini-2.5-flash",
+            "name": "Gemini 2.5 Flash via SkillBoss",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.1,
+              "output": 0.4
+            },
+            "contextWindow": 1000000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "skillboss/deepseek-v3",
+            "name": "DeepSeek V3 via SkillBoss",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.27,
+              "output": 0.27
+            },
+            "contextWindow": 64000,
+            "maxTokens": 8192
+          }
+        ]
+      },
       "minimax-portal": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
         "apiKey": "minimax-oauth",
         "api": "anthropic-messages",
-        "models": []
+        "models": [
+          {
+            "id": "abab7-chat",
+            "name": "MiniMax 2.7 Standard"
+          },
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax 2.7"
+          },
+          {
+            "id": "MiniMax-M2.7-highspeed",
+            "name": "MiniMax 2.7 Highspeed"
+          }
+        ]
       },
       "minimax": {
         "baseUrl": "https://api.minimaxi.com/anthropic",
@@ -64,6 +142,18 @@
         "primary": "minimax-portal/abab7-chat"
       },
       "models": {
+        "skillboss/claude-4-5-sonnet": {
+          "alias": "claude"
+        },
+        "skillboss/gpt-5": {
+          "alias": "gpt5"
+        },
+        "skillboss/gemini-2.5-flash": {
+          "alias": "flash"
+        },
+        "skillboss/deepseek-v3": {
+          "alias": "deepseek"
+        },
         "minimax-portal/abab7-chat": {
           "alias": "minimax-m2.7"
         },
@@ -94,7 +184,7 @@
         "default": false,
         "workspace": "/home/du/.openclaw/workspace-researcher",
         "agentDir": "/home/du/.openclaw/agents/researcher/agent",
-        "model": "minimax-portal/abab7-chat",
+        "model": "minimax-m2.7-highspeed",
         "identity": {
           "name": "研究员 Nemo",
           "theme": "Dig in and in, deep research into unknown ...",
@@ -107,7 +197,7 @@
         "name": "supervisor",
         "workspace": "/home/du/.openclaw/workspace-supervisor",
         "agentDir": "/home/du/.openclaw/agents/supervisor/agent",
-        "model": "minimax-portal/MiniMax-M2.7",
+        "model": "minimax-m2.7-highspeed",
         "identity": {
           "name": "监督员 Meg",
           "theme": "Behave yourself, I am watching you...",
@@ -243,13 +333,7 @@
     },
     "feishu": {
       "enabled": true,
-      "useWebSocket": true,
       "connectionMode": "websocket",
-      "groupPolicy": "allowlist",
-      "allowFrom": [
-        "cli_a932a6b093785cd1",
-        "all"
-      ],
       "accounts": {
         "default": {
           "appId": "cli_a932a6b093785cd1",
@@ -263,15 +347,7 @@
           "appId": "cli_a94c3d686cfadbde",
           "appSecret": "l1ROslhw3M5tYEYB7GuO8ejfkefkG3M6"
         }
-      },
-      "streaming": true,
-      "blockStreaming": false,
-      "updateInterval": 600,
-      "incrementalReasoning": true,
-      "showThinking": "visible",
-      "renderStrategy": "card_v2",
-      "thinkingTitle": "🔍 AI 思考中...",
-      "domain": "feishu"
+      }
     }
   },
   "gateway": {
@@ -292,10 +368,9 @@
   "skills": {
     "entries": {
       "getnote": {
-        "apiKey": "gk_live_cd553b1acdb22a7a.deeafc3eeb8a7fbb5553df1a46332df282b46ee0a210d40b",
+        "apiKey": "gk_live_87cf8ea9d9cdebd4.43d2650ec72f78ccf33be8787578555612a800e74e47feee",
         "env": {
-          "GETNOTE_CLIENT_ID": "cli_a1b2c3d4e5f6789012345678abcdef90",
-          "GETNOTE_OWNER_ID": "ou_ab13163876b798740e25260c078b3098"
+          "GETNOTE_CLIENT_ID": "cli_3802f9db08b811f197679c63c078bacc"
         }
       }
     }
