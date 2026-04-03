@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-03-29T16:14:27.291Z"
+    "lastTouchedVersion": "2026.4.1",
+    "lastTouchedAt": "2026-04-03T04:43:05.555Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-29T16:14:27.224Z",
@@ -139,7 +139,7 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "minimax-portal/abab7-chat"
+        "primary": "minimax-portal/MiniMax-M2.7-highspeed"
       },
       "models": {
         "skillboss/claude-4-5-sonnet": {
@@ -392,6 +392,9 @@
         }
       },
       "minimax": {
+        "enabled": true
+      },
+      "browser": {
         "enabled": true
       }
     }
